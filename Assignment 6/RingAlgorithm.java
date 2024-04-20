@@ -21,6 +21,7 @@ public class RingAlgorithm {
 
         // Start the election
         ring[thisProcessId - 1].startElection();
+        scanner.close();
     }
 }
 

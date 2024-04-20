@@ -12,11 +12,11 @@ class BullyAlgoExample {
     // main() method start
     public static void main(String args[]) throws IOException {
         // Handle IOException
+        Scanner sc = new Scanner(System.in);
         try {
             // Get input from the user for the number of processes
             System.out.println("Enter total number of processes:");
             // Create scanner class object to get input from user
-            Scanner sc = new Scanner(System.in);
             numberOfProcess = sc.nextInt();
             int i;
             // Use for loop to set priority and status of each process
@@ -35,6 +35,7 @@ class BullyAlgoExample {
         } catch (Exception e) {
             System.out.println("An error occurred while reading input: " + e.getMessage());
         }
+        sc.close();
     }
 
     // Create electProcess() method
