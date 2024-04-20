@@ -2,31 +2,34 @@
 
 ## 📝 Assignment 1 - Multi-threaded Client/Server Process Communication using RMI
 
-Dive into the world of multi-threaded client/server process communication using RMI.
+Implement multi-threaded client/server Process communication using RMI.
 
 ## 💡 Assignment 2 - Distributed Application using CORBA
 
-Create your own distributed application using CORBA. Get ready for some object brokering magic!
+Develop any distributed application using CORBA to demonstrate object brokering.
+(Calculator or String operations)
 
 ## 🌐 Assignment 3 - Distributed System for Array Sum Calculation
 
-Join the distributed computing revolution! Build a system to calculate the sum of array elements across multiple processors.
+Develop a distributed system, to find sum of N elements in an array by distributing N/n elements to n
+number of processors MPI or OpenMP. Demonstrate by displaying the intermediate sums calculated
+at different processors.
 
 ## ⏰ Assignment 4 - Berkeley Algorithm for Clock Synchronization
 
-Time to synchronize those clocks! Implement the Berkeley algorithm for clock synchronization and keep your systems in harmony.
+Implement Berkeley algorithm for clock synchronization.
 
 ## 🔄 Assignment 5 - Token Ring based Mutual Exclusion Algorithm
 
-Get ready for some token ring action! Implement a mutual exclusion algorithm to keep your distributed systems running smoothly.
+Implement token ring based mutual exclusion algorithm.
 
 ## 🎉 Assignment 6 - Leader Election Algorithms
 
-It's election time! Implement Bully and Ring algorithms to elect leaders in your distributed systems.
+Implement Bully and Ring algorithm for leader election.
 
 ## 🌟 Assignment 7 - Web Service and Distributed Application
 
-Create a web service and build a distributed application to consume it. Let's bring some interactivity to the web!
+Create a simple web service and write any distributed application to consume the web service.
 
 ## 🛠️ Requirements
 
