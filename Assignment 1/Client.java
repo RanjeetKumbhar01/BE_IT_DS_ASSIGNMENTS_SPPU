@@ -1,3 +1,4 @@
+
 // client.java
 import java.rmi.*;
 import java.util.Scanner;
@@ -10,7 +11,8 @@ public class Client {
         try {
             // Define the URL of the server
             String serverurl = "rmi://localhost/Server";
-            // Look up for the remote object on the specified URL and cast it to ServerIntf interface
+            // Look up for the remote object on the specified URL and cast it to ServerIntf
+            // interface
             ServerIntf serverIntf = (ServerIntf) Naming.lookup(serverurl);
 
             // Get user input for two numbers
@@ -29,6 +31,7 @@ public class Client {
             // Handle any exceptions occurred during the execution
             System.out.println("Exception Occurred at Client!" + e.getMessage());
         }
+
+        sc.close();
     }
 }
-
