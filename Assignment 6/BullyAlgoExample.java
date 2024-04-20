@@ -32,7 +32,7 @@ class BullyAlgoExample {
             // Call electProcess() method
             electProcess(ele);
             System.out.println("After electing process the final coordinator is " + cord);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("An error occurred while reading input: " + e.getMessage());
         }
     }
