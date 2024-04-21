@@ -1,0 +1,36 @@
+Steps:
+1. Unzip opt
+2. transfer .c file to opt->openmpi->bin
+3. follow belore ALgorithm/Steps
+
+Algorithm / Methods / Steps:
+
+1. Download openmpi-4.1.4.tar.bz2 from http://www.open-mpi.org in a folder say LP5.
+2. Goto the terminal (Command prompt)
+3. Update using
+    sudo apt-get update
+    sudo apt install gcc {if not already installed}
+
+4. Goto the directory which contains the downloaded file
+5. Extract the files using
+tar -jxf openmpi-4.1.4.tar.bz2
+
+6. The directory openmpi-4.1.4 is created
+7. Configure, compile and install by executing the following commands
+    ./configure --prefix=$HOME/opt/openmpi
+    make all
+    make install
+
+8. Now openmpi folder is created in ‘opt‘ folder of Home directory.
+9. Now the folder LP5 can be deleted (optional)
+10. Update the PATH and LD_LIBRARY_PATH environment variable using
+echo "export PATH=\$PATH:\$HOME/opt/openmpi/bin" >> $HOME/.bashrc
+echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/opt/openmpi/lib">>$HOME/.bashrc
+
+11. Compile the program using
+mpicc name of the program
+
+12. Execute the program using
+mpirun -np 4 ./a.out
+or run below command
+mpirun --oversubscribe -np 4 ./a.out
