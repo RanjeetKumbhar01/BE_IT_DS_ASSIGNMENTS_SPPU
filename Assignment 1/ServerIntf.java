@@ -1,4 +1,3 @@
-// serverintf.java
 import java.rmi.*;
 
 // Define the remote interface ServerIntf which extends Remote interface

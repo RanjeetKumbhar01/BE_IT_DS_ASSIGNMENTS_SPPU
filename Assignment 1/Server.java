@@ -1,4 +1,3 @@
-// server.java
 import java.rmi.*;
 
 public class Server {

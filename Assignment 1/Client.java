@@ -23,7 +23,7 @@ public class Client {
 
             // Display the entered numbers
             System.out.println("First Number is: " + num1);
-            System.out.println("Second Number is: " + num1);
+            System.out.println("Second Number is: " + num2);
             System.out.println(" ------------ Results-----------");
             // Call the remote method 'add' on the server and display the result
             System.out.println("Addition is: " + serverIntf.add(num1, num2));

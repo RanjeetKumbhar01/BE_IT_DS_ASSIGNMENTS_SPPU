@@ -1,4 +1,3 @@
-// serverimpl.java
 import java.rmi.*;
 import java.rmi.server.*;
 
@@ -24,8 +23,8 @@ public class ServerImpl extends UnicastRemoteObject implements ServerIntf {
 
     // Implementation of the remote 'mul' method
     public double mul(double a, double b) throws RemoteException {
-        if (b == 0) return 0;
+        if (b == 0)
+            return 0;
         return a * b;
     }
 }
-
