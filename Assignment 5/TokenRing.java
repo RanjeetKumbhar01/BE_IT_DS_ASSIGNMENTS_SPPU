@@ -26,9 +26,25 @@ public class TokenRing {
             // Getting sender, receiver, and data
             System.out.print("\nEnter Sender: ");
             int sender = sc.nextInt();
-            System.out.print("Enter Receiver: ");
+
+            if (sender < 0 || sender >= n) {
+                System.out.print("\nEnter valid senter between " + 1 + " & " + (n - 1));
+                System.out.print("\nEnter Sender: ");
+                sender = sc.nextInt();
+
+            }
+
+            System.out.print("\nEnter Receiver: ");
             int receiver = sc.nextInt();
-            System.out.print("Enter Data to Send: ");
+
+            if (receiver < 0 || receiver >= n) {
+                System.out.print("\nEnter valid receiver between " + 1 + " & " + (n - 1));
+                System.out.print("\nEnter Receiver: ");
+                receiver = sc.nextInt();
+
+            }
+
+            System.out.print("\nEnter Data to Send: ");
             int data = sc.nextInt();
             int token = 0;
             int i = 0;
