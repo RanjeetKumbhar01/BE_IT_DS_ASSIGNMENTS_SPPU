@@ -5,8 +5,11 @@ public class RingAlgorithm {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of processes: ");
         int numProcesses = scanner.nextInt();
-        System.out.print("Enter the ID of this process (between 1 and " + numProcesses + "): ");
+        System.out.print("Enter the ID of this process (between 1 and " +
+                numProcesses + "): ");
         int thisProcessId = scanner.nextInt();
+        System.out.print("Enter the ID of this process which failed ");
+        int failedID = scanner.nextInt();
 
         // Initialize the ring
         RingProcess[] ring = new RingProcess[numProcesses];
@@ -20,7 +23,7 @@ public class RingAlgorithm {
         }
 
         // Start the election
-        ring[thisProcessId - 1].startElection();
+        ring[thisProcessId - 1].startElection(failedID, numProcesses);
         scanner.close();
     }
 }
@@ -39,7 +42,7 @@ class RingProcess {
         this.nextProcess = nextProcess;
     }
 
-    public void startElection() {
+    public void startElection(int failedID, int numProcesses) {
         System.out.println("Process " + processId + " starts the election.");
 
         if (isLeader) {
@@ -47,19 +50,28 @@ class RingProcess {
             return;
         }
 
+        int[] arr = new int[numProcesses - 1];
+
+        int i = 0;
         RingProcess currentProcess = this;
-        while (true) {
-            if (currentProcess.nextProcess.processId == processId) {
-                currentProcess.isLeader = true;
-                System.out.println("Process " + processId + " is elected as the leader.");
-                break;
-            } else if (currentProcess.nextProcess.processId > processId) {
-                currentProcess = currentProcess.nextProcess;
-            } else {
-                System.out.println("Process " + processId + " passes the election message to Process " +
-                        currentProcess.nextProcess.processId);
-                currentProcess = currentProcess.nextProcess;
+        arr[i] = currentProcess.processId;
+
+        while (currentProcess.nextProcess != this) {
+            if (currentProcess.nextProcess.processId != failedID) {
+                arr[i++] = currentProcess.nextProcess.processId;
+
             }
+            currentProcess = currentProcess.nextProcess;
+
         }
+        int max = arr[0];
+
+        // Traverse array elements from second and
+        // compare every element with current max
+        for (i = 1; i < arr.length; i++)
+            if (arr[i] > max)
+                max = arr[i];
+        System.out.println(max + " elected as the new leader.");
+
     }
 }
