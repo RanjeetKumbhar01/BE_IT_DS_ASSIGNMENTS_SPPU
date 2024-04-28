@@ -19,14 +19,18 @@ public class TokenRing {
         for (int i = 0; i < n; i++) {
             System.out.print(i + " ");
         }
-        // System.out.println("0");
+        System.out.println("0 (loop back to Node 0)");
+        System.out.println("Note: Initialy Token is at Node 0");
 
         int choice = 0;
+        int token = 0;
+
         do {
             // Getting sender, receiver, and data
             System.out.print("\nEnter Sender: ");
             int sender = sc.nextInt();
 
+            // validation of sender
             if (sender < 0 || sender >= n) {
                 System.out.print("\nEnter valid senter between " + 1 + " & " + (n - 1));
                 System.out.print("\nEnter Sender: ");
@@ -37,39 +41,35 @@ public class TokenRing {
             System.out.print("\nEnter Receiver: ");
             int receiver = sc.nextInt();
 
+            // validation of receiver
             if (receiver < 0 || receiver >= n) {
                 System.out.print("\nEnter valid receiver between " + 1 + " & " + (n - 1));
                 System.out.print("\nEnter Receiver: ");
                 receiver = sc.nextInt();
-
             }
 
             System.out.print("\nEnter Data to Send: ");
             int data = sc.nextInt();
-            int token = 0;
             int i = 0;
             // System.out.println(" " + sender);
-            System.out.println("Sender: " + sender + " Sending Data: " + data);
+            System.out.println("\nSender is " + sender + " and Sending Data is " + data);
 
             // Token Passing
-            System.out.println("\nToken Passing: [Current Token At: " + token + " ]");
-            for (i = token; i < sender; i++) {
+            System.out.println("\nToken Passing: [Previous Node -> Next Node]");
+            for (i = token; i != sender; i = (i + 1) % n) {
                 System.out.print(" " + i + " ->");
             }
+            System.out.println(" " + sender);
 
+            System.out.println("\nData Passing: [Previous Node -> Next Node]");
             // Forwarding data until it reaches the receiver
             for (i = sender; i != receiver; i = (i + 1) % n) {
-                // System.out.println("Data Forwarded by: " + i);
                 System.out.print(" " + i + " ->");
             }
-            System.out.print(" " + receiver);
+            System.out.println(" " + receiver + " \n[Current Token is at Node " + receiver + "]");
             System.out.println("\nReceiver: " + receiver + ", Received the data: " + data);
             token = sender;
-            if (i < n - 1) {
-                for (; i < n; i++)
-                    System.out.print(" " + i + " ->");
 
-            }
             // Asking user if they want to send data again
             System.out.print("\nDo you want to send data again? If yes Enter 1, If no Enter 0: ");
             choice = sc.nextInt();
