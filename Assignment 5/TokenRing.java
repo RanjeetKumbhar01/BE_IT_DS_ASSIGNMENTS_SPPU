@@ -24,28 +24,27 @@ public class TokenRing {
 
         int choice = 0;
         int token = 0;
-
+        int sender, receiver;
         do {
             // Getting sender, receiver, and data
-            System.out.print("\nEnter Sender: ");
-            int sender = sc.nextInt();
-
             // validation of sender
-            if (sender < 0 || sender >= n) {
-                System.out.print("\nEnter valid senter between " + 1 + " & " + (n - 1));
+            while (true) {
                 System.out.print("\nEnter Sender: ");
                 sender = sc.nextInt();
-
+                if (sender < 0 || sender >= n)
+                    System.out.print("\nEnter valid senter between " + 1 + " & " + (n - 1));
+                else
+                    break;
             }
 
-            System.out.print("\nEnter Receiver: ");
-            int receiver = sc.nextInt();
-
             // validation of receiver
-            if (receiver < 0 || receiver >= n) {
-                System.out.print("\nEnter valid receiver between " + 1 + " & " + (n - 1));
+            while (true) {
                 System.out.print("\nEnter Receiver: ");
                 receiver = sc.nextInt();
+                if (receiver < 0 || receiver >= n)
+                    System.out.print("\nEnter valid receiver between " + 1 + " & " + (n - 1));
+                else
+                    break;
             }
 
             System.out.print("\nEnter Data to Send: ");
