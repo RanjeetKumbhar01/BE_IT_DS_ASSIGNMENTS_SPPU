@@ -1,3 +1,5 @@
+![Custom Badge](https://img.shields.io/badge/Views-9000+-blue)
+
 # 🚀 BE_IT_DS_ASSIGNMENTS_SPPU | Lab Practice - V
 
 ## 📝 Assignment 1 - Multi-threaded Client/Server Process Communication using RMI
