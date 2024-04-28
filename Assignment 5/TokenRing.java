@@ -60,13 +60,14 @@ public class TokenRing {
                 System.out.print(" " + i + " ->");
             }
             System.out.println(" " + sender);
+            System.out.println("Note: Current Token is at Node " + sender);
 
             System.out.println("\nData Passing: [Previous Node -> Next Node]");
             // Forwarding data until it reaches the receiver
             for (i = sender; i != receiver; i = (i + 1) % n) {
                 System.out.print(" " + i + " ->");
             }
-            System.out.println(" " + receiver + " \n[Current Token is at Node " + receiver + "]");
+            System.out.println(" " + receiver);
             System.out.println("\nReceiver: " + receiver + ", Received the data: " + data);
             token = sender;
 
