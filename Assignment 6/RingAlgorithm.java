@@ -2,14 +2,32 @@ import java.util.Scanner;
 
 public class RingAlgorithm {
     public static void main(String[] args) {
+        int thisProcessId, numProcesses, failedID;
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of processes: ");
-        int numProcesses = scanner.nextInt();
-        System.out.print("Enter the ID of this process (between 1 and " +
-                numProcesses + "): ");
-        int thisProcessId = scanner.nextInt();
-        System.out.print("Enter the ID of this process which failed ");
-        int failedID = scanner.nextInt();
+        numProcesses = scanner.nextInt();
+
+        // while loop for validation
+        while (true) {
+            System.out.print("Enter the ID of this process (between 1 and " + numProcesses + "): ");
+            thisProcessId = scanner.nextInt();
+            if (thisProcessId <= 0 && thisProcessId > numProcesses) {
+                System.out.println("Please enter correct input");
+            } else
+                break;
+        }
+
+        // while loop for validation
+        while (true) {
+            System.out.print("Enter the ID of this process which failed ");
+            failedID = scanner.nextInt();
+            if (failedID <= 0 && failedID > numProcesses) {
+                System.out.println("Please enter correct input");
+                continue;
+            } else
+                break;
+        }
 
         // Initialize the ring
         RingProcess[] ring = new RingProcess[numProcesses];

@@ -26,8 +26,18 @@ class BullyAlgoExample {
                 System.out.println("Priority of process " + (i + 1) + ":");
                 priorities[i] = sc.nextInt();
             }
-            System.out.println("Enter process which will initiate election");
-            int ele = sc.nextInt();
+
+            int ele;
+            // loop for validation
+            while (true) {
+                System.out.println("Enter process which will initiate election");
+                ele = sc.nextInt();
+                if (status[ele - 1] == 0) {
+                    System.out.println("\nAlert!! Initiated Process is Dead, Please select live Node(status==1)");
+                } else
+                    break;
+            }
+
             sc.close();
             // Call electProcess() method
             electProcess(ele);
