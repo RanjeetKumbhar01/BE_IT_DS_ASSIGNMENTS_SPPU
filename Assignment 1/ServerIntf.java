@@ -1,14 +1,21 @@
 import java.rmi.*;
 
-// Define the remote interface ServerIntf which extends Remote interface
 interface ServerIntf extends Remote {
 
-    // Declare remote methods that can be invoked by clients
-    public double add(double a, double b) throws RemoteException;
+    public int addition(int a, int b) throws RemoteException;
 
-    public double sub(double a, double b) throws RemoteException;
+    public int substraction(int a, int b) throws RemoteException;
 
-    public double div(double a, double b) throws RemoteException;
+    public int division(int a, int b) throws RemoteException;
 
-    public double mul(double a, double b) throws RemoteException;
+    public int multiplication(int a, int b) throws RemoteException;
+
+    public int square(int a) throws RemoteException;
+
+    public int squareroot(int a) throws RemoteException;
+
+    public void palindrome(String str) throws RemoteException;
+
+    public void isequalstring(String str1, String str2) throws RemoteException;
+
 }
