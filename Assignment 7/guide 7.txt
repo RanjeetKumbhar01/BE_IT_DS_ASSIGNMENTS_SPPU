@@ -1,0 +1,26 @@
+steps for 7assignment
+1. create project javaweb->web app finish(name: assign7)
+2. right click on assgn7 new-> web service
+	a. name: mycalculator and package: com.myservice
+3. delete bottom text in mycalculator.java 
+
+4. right click mycalculator under web services of assign-7 on add operation 
+	a. add operations and give name
+5. Build then deploy -> assign-7
+6. RIght click on mycalculator -> Test web service
+
+*********
+1. New project CalculatorWebService Client
+2. open index file and create form
+	a. drag form target - > CalculatorServlet
+	b. create form take input and create submit button
+
+3. Right click on that calculatorwebservice file new->web services Client
+4. so web service reference file created
+5 . same as 3 new-> servlet and past that same name (action) here.
+6. servlet file will come
+	a. drag files from reference folder at bottom on same servlet file
+	b. get input from form Double.parseDouble(request.getParameter("value"));
+	c. modify html and call function
+7. clean and buil client
+8. Run index.html in client
