@@ -1,3 +1,4 @@
+sudo apt install mpich
 Steps:
 1. Unzip opt
 2. transfer .c file to opt->openmpi->bin
